@@ -1,9 +1,50 @@
 <h1>検索機能</h1>
+<div class="search-form">
+  <%= form_with url: caretaker_search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, value: @keyword %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
 
-<% @caretakers.each do |caretaker| %>
-  <%= caretaker.name %>
-  <%= caretaker.name %>
-  <%= caretaker.name %>
-  <%= caretaker.name %>
-  <%= caretaker.name %>
+<% if not @url.include?("search")%>
+    <% @cleaners.each do |cleaner| %>
+      <%= cleaner.name %>
+      <%= cleaner.age %>
+      <%= cleaner.gender %>
+      <%= cleaner.delete_flag %>
+      <%= cleaner.prefecture %>
+      <%= cleaner.city %>
+      <%= cleaner.address_number %>
+      <%= cleaner.building %>
+      <%= cleaner.license %>
+      <%= cleaner.pr %>
+      <%= cleaner.account_number %>
+      <%= cleaner.bank_code %>
+      <%= cleaner.branch_name %>
+      <%= cleaner.branch_code %>
+      <%= cleaner.account_type %>
+    <% end %>
 <% end %>
+
+<div class="post-list">
+    <% if @posts %>
+      <% @posts.each do |post| %>
+        <%= post.name %>
+        <%= post.age %>
+        <%= post.gender %>
+        <%= post.delete_flag %>
+        <%= post.prefecture %>
+        <%= post.city %>
+        <%= post.address_number %>
+        <%= post.building %>
+        <%= post.license %>
+        <%= post.pr %>
+        <%= post.account_number %>
+        <%= post.bank_code %>
+        <%= post.branch_name %>
+        <%= post.branch_code %>
+        <%= post.account_type %>
+      <% end %>
+    <% end %>
+</div>
+

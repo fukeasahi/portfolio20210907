@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_024730) do
+ActiveRecord::Schema.define(version: 2021_09_09_064811) do
 
   create_table "caretakers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,6 +30,31 @@ ActiveRecord::Schema.define(version: 2021_09_09_024730) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_caretakers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_caretakers_on_reset_password_token", unique: true
+  end
+
+  create_table "cleaners", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name"
+    t.integer "age"
+    t.integer "gender"
+    t.integer "delete_flag"
+    t.string "prefecture"
+    t.string "city"
+    t.string "address_number"
+    t.string "building"
+    t.string "license"
+    t.string "pr"
+    t.integer "account_number"
+    t.integer "bank_code"
+    t.string "branch_name"
+    t.integer "branch_code"
+    t.integer "account_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

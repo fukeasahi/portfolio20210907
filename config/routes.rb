@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  puts "aaaaadfsfdadafdas"
   # devise_for :caretakers, skip: :all
   # devise_scope :caretakers do
   #   get 'caretakers/sign_up' => 'caretakers/registrations#new'
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   #   delete 'caretakers/sign_out' => 'caretakers/sessions#destroy'
   # end
   get '/caretaker/cleaners' => 'caretakers/cleaners#index'
-  get 'search' => 'posts#search'
+  get '/caretaker/search' => 'caretakers/cleaners#search'
   
   get '/cleaners/caretakers' => 'cleaners/caretakers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
