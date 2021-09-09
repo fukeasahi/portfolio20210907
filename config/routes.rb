@@ -7,9 +7,18 @@ Rails.application.routes.draw do
   #   post 'caretakers/sign_in' => 'caretakers/sessions#create'
   #   delete 'caretakers/sign_out' => 'caretakers/sessions#destroy'
   # end
-  get '/caretakers/cleaners' => 'caretakers/cleaners#index'
+  
+  
+  # get '/caretakers/cleaners' => 'caretakers/cleaners#index'
+  # get '/caretakers/cleaners' => 'caretakers/cleaners#show'
+  # get '/caretakers/search' => 'caretakers/cleaners#search'
+  namespace :caretakers do
+    resources :cleaners
+  end
   get '/caretakers/search' => 'caretakers/cleaners#search'
   
-  get '/cleaners/caretakers' => 'cleaners/caretakers#index'
+  namespace :cleaners do
+    resources :caretakers
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

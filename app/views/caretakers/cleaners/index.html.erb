@@ -4,7 +4,7 @@
 
       <%= form_with url: caretakers_search_path, method: :get, class:"form_row", local: true do |f| %>
         <%= f.text_field :keyword, value: @keyword, class: "col-lg-10 form" %>
-        <%= f.submit "検索", class: "btn btn-default col-lg-1", style: "background-color:#0092ff; opacity:0.7;" %>
+        <%= f.submit "検索", class: " col-lg-1", style: "background-color:#0092ff; opacity:0.7;" %>
       <% end %>
 
     
@@ -12,18 +12,20 @@
         <% if not @url.include?("search")%>
           <% @cleaners.each do |cleaner| %>
             <div class="col-lg-4" style="margin-bottom: 50px;">
-              <div class="row">
-                <div class="col-6">
-                  <div><%= cleaner.name %></div>
-                  <div>⭐️⭐️⭐️⭐⭐</div>
-                  <div><%= cleaner.age %>歳<%= cleaner.gender %></div>
-                  <div><%= cleaner.city %>在住</div>
-                  <div><%= cleaner.pr %></div>
+              <%= link_to caretakers_cleaner_path(cleaner), style:"color: black;" do%>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <%= image_tag "woman3.png", style: "height:120px;"%>
+                  </div>
+                  <div class="col-6">
+                    <div><%= cleaner.name %></div>
+                    <div>⭐️⭐️⭐️⭐⭐</div>
+                    <div><%= cleaner.age %>歳<%= cleaner.gender %></div>
+                    <div><%= cleaner.city %>在住</div>
+                    <div><%= cleaner.pr %></div>
+                  </div>
                 </div>
-                <div class="col-lg-6">
-                  <%= image_tag "woman2.jpeg", style: "height:120px;"%>
-                </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         <% end %>
@@ -32,15 +34,15 @@
           <% @posts.each do |post| %>
             <div class="col-lg-4" style="margin-bottom: 50px;">
               <div class="row">
+                <div class="col-lg-6">
+                  <%= image_tag "woman3.png", style: "height:120px;"%>
+                </div>
                 <div class="col-6">
                   <div><%= post.name %></div>
                   <div>⭐️⭐️⭐️⭐⭐</div>
                   <div><%= post.age %>歳<%= post.gender %></div>
                   <div><%= post.city %>在住</div>
                   <div><%= post.pr %></div>
-                </div>
-                <div class="col-lg-6">
-                  <%= image_tag "woman2.jpeg", style: "height:120px;"%>
                 </div>
               </div>
             </div>
