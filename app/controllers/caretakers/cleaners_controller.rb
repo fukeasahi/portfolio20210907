@@ -1,6 +1,7 @@
 class Caretakers::CleanersController < ApplicationController
     def index
         @cleaners = Cleaner.all
+        
         @url = request.url
     end
     

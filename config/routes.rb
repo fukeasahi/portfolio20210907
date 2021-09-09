@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   #   post 'caretakers/sign_in' => 'caretakers/sessions#create'
   #   delete 'caretakers/sign_out' => 'caretakers/sessions#destroy'
   # end
-  get '/caretaker/cleaners' => 'caretakers/cleaners#index'
-  get '/caretaker/search' => 'caretakers/cleaners#search'
+  get '/caretakers/cleaners' => 'caretakers/cleaners#index'
+  get '/caretakers/search' => 'caretakers/cleaners#search'
   
   get '/cleaners/caretakers' => 'cleaners/caretakers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

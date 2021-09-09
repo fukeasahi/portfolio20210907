@@ -1,50 +1,52 @@
-<h1>検索機能</h1>
-<div class="search-form">
-  <%= form_with url: caretaker_search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword %>
-    <%= f.submit "検索" %>
-  <% end %>
-</div>
 
-<% if not @url.include?("search")%>
-    <% @cleaners.each do |cleaner| %>
-      <%= cleaner.name %>
-      <%= cleaner.age %>
-      <%= cleaner.gender %>
-      <%= cleaner.delete_flag %>
-      <%= cleaner.prefecture %>
-      <%= cleaner.city %>
-      <%= cleaner.address_number %>
-      <%= cleaner.building %>
-      <%= cleaner.license %>
-      <%= cleaner.pr %>
-      <%= cleaner.account_number %>
-      <%= cleaner.bank_code %>
-      <%= cleaner.branch_name %>
-      <%= cleaner.branch_code %>
-      <%= cleaner.account_type %>
-    <% end %>
-<% end %>
+<div class="container">
+      
 
-<div class="post-list">
-    <% if @posts %>
-      <% @posts.each do |post| %>
-        <%= post.name %>
-        <%= post.age %>
-        <%= post.gender %>
-        <%= post.delete_flag %>
-        <%= post.prefecture %>
-        <%= post.city %>
-        <%= post.address_number %>
-        <%= post.building %>
-        <%= post.license %>
-        <%= post.pr %>
-        <%= post.account_number %>
-        <%= post.bank_code %>
-        <%= post.branch_name %>
-        <%= post.branch_code %>
-        <%= post.account_type %>
+      <%= form_with url: caretakers_search_path, method: :get, class:"form_row", local: true do |f| %>
+        <%= f.text_field :keyword, value: @keyword, class: "col-lg-10 form" %>
+        <%= f.submit "検索", class: "btn btn-default col-lg-1", style: "background-color:#0092ff; opacity:0.7;" %>
       <% end %>
-    <% end %>
+
+    
+    <div class="row" style="margin-top: 50px;">
+        <% if not @url.include?("search")%>
+          <% @cleaners.each do |cleaner| %>
+            <div class="col-lg-4" style="margin-bottom: 50px;">
+              <div class="row">
+                <div class="col-6">
+                  <div><%= cleaner.name %></div>
+                  <div>⭐️⭐️⭐️⭐⭐</div>
+                  <div><%= cleaner.age %>歳<%= cleaner.gender %></div>
+                  <div><%= cleaner.city %>在住</div>
+                  <div><%= cleaner.pr %></div>
+                </div>
+                <div class="col-lg-6">
+                  <%= image_tag "woman2.jpeg", style: "height:120px;"%>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      
+        <% if @posts %>
+          <% @posts.each do |post| %>
+            <div class="col-lg-4" style="margin-bottom: 50px;">
+              <div class="row">
+                <div class="col-6">
+                  <div><%= post.name %></div>
+                  <div>⭐️⭐️⭐️⭐⭐</div>
+                  <div><%= post.age %>歳<%= post.gender %></div>
+                  <div><%= post.city %>在住</div>
+                  <div><%= post.pr %></div>
+                </div>
+                <div class="col-lg-6">
+                  <%= image_tag "woman2.jpeg", style: "height:120px;"%>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+
 </div>
 
