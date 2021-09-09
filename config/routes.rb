@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   # end
   get '/caretaker/cleaners' => 'caretakers/cleaners#index'
   get 'search' => 'posts#search'
+  
+  get '/cleaners/caretakers' => 'cleaners/caretakers#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
