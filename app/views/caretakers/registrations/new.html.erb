@@ -1,0 +1,53 @@
+<h2>Sign up</h2>
+
+<%= form_with model: @registrations, url: caretakers_registration_path, local: true do |f| %>
+  <%= render "caretakers/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :post_code %><br />
+    <%= f.text_field :post_code, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, autofocus: true, autocomplete: "email" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :prefecture %><br />
+    <%= f.text_field :prefecture, autofocus: true, autocomplete: "email" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "email" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :address_number %><br />
+    <%= f.text_field :address_number, autofocus: true, autocomplete: "email" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :building %><br />
+    <%= f.text_field :building, autofocus: true, autocomplete: "email" %>
+  </div>
+
+ 
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "caretakers/shared/links" %>
