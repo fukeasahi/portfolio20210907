@@ -3,6 +3,7 @@ class CreateProperties < ActiveRecord::Migration[5.2]
     create_table :properties do |t|
       t.string  :post_code,       null: false
       t.string  :image_id
+      t.string  :dirt_image_id,   null: false
       t.float   :size
       t.integer :status
       t.string  :prefecture,      null: false
