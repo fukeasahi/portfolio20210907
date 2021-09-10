@@ -10,7 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_10_000353) do
+ActiveRecord::Schema.define(version: 2021_09_10_002720) do
+
+  create_table "caretakers", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name"
+    t.integer "delete_flag"
+    t.string "post_code"
+    t.string "phone_number"
+    t.string "prefecture"
+    t.string "city"
+    t.string "address_number"
+    t.string "building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_caretakers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_caretakers_on_reset_password_token", unique: true
+  end
+
+  create_table "cleaners", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name"
+    t.integer "age"
+    t.integer "gender"
+    t.integer "delete_flag"
+    t.string "prefecture"
+    t.string "city"
+    t.string "address_number"
+    t.string "building"
+    t.string "license"
+    t.string "pr"
+    t.integer "account_number"
+    t.integer "bank_code"
+    t.string "branch_name"
+    t.integer "branch_code"
+    t.integer "account_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "cleaner_id"
+    t.integer "caretaker_id"
+    t.integer "property_id"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.integer "price"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "post_code", null: false
@@ -22,6 +79,15 @@ ActiveRecord::Schema.define(version: 2021_09_10_000353) do
     t.string "city", null: false
     t.string "address_number", null: false
     t.string "building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "caretaker_id"
+    t.integer "cleaner_id"
+    t.string "comment"
+    t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

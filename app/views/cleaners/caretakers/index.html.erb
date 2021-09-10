@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12" style="margin-bottom: 15px;">
+            <h3>
+                依頼されています
+            </h3>
+        </div>
+        <% @yet_orders.each do |yet_order| %>
+            <div class="col-lg-4" style="margin-bottom: 50px;">
+              <%= link_to cleaners_caretaker_path(yet_order), style:"color: black;" do%>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <%= image_tag "woman3.png", style: "height:120px;"%>
+                  </div>
+                  <div class="col-6">
+                    <div><%= yet_order.caretaker.name %></div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+        <% end %>
+    </div>
+    <div class="row">
+        <div class="col-lg-12" style="margin-bottom: 15px;">
+            <h3>
+                承認済
+            </h3>
+        </div>
+        <!--<div class="col-lg-12">-->
+        <% @ok_orders.each do |ok_order| %>
+            <div class="col-lg-4" style="margin-bottom: 50px;">
+              <%= link_to cleaners_caretaker_path(ok_order.caretaker), style:"color: black;" do%>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <%= image_tag "woman3.png", style: "height:120px;"%>
+                  </div>
+                  <div class="col-6">
+                    <div><%= ok_order.caretaker.name %></div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+        <% end %>
+        <!--</div>-->
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <h3>清掃員依頼</h3>
+    </div>
+    <div class="row">
+        <%= form_with model:[@order], url: caretakers_cleaner_orders_path(params[:cleaner_id]),local: true do |f| %>
+            <%= f.label :start_datetime, "清掃開始日時" %>
+            <%= f.datetime_field :start_datetime, class: "form-control", style: "margin-bottom: 15px;" %>
+            
+            <%= f.label :start_datetime, "清掃終了日時" %>
+            <%= f.datetime_field :end_datetime, class: "form-control", style: "margin-bottom: 15px;" %>
+             
+            <%= f.submit "依頼", class: "btn btn-default", style: "margin-left: 770px; margin-top: 15px; background-color:#0092ff; opacity:0.7;" %>
+        <% end %>
+    </div>
+</div>
+
+
+
+<!--t.integer "caretaker_id"-->
+<!--    t.integer "property_id"-->
+<!--    t.datetime "datetime"-->
+<!--    t.integer "price"-->
+<!--    t.integer "status"-->

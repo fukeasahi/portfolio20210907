@@ -1,5 +1,5 @@
 <h1>物件情報変更フォーム</h1>
-<%= form_for @property, url: create_property_path do |f| %>
+<%= form_for @property, url: edit_property_path do |f| %>
   <div class="field">
     <%= f.label :物件間取り画像 %>
     <%= f.file_field :image_id %><br>
