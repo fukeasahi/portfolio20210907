@@ -1,7 +1,7 @@
 <div class="container" style="padding-bottom: 50px;">
     <div class="row">
         <div class="col-lg-12" style="text-align : center">
-            <%= image_tag "woman3.png",style:"height:576px; text-align: right;"%>
+            <%= image_tag "woman#{@cleaner.id}.png",style:"height:576px; text-align: right;"%>
         </div>
         
         <div style="width:864px; margin: 0 auto;">
@@ -24,14 +24,6 @@
     <div class="row">
         <div class="col-lg-12" style="text-align : center">
             <div>
-                
-               
-                <div style="width: 864px; margin: 15px auto 15px;">
-                    <%= form_with model:[@review], url: caretakers_cleaner_reviews_path(@cleaner),local: true do |f| %>
-                        <%= f.text_area :comment, class:"form-control" %>
-                        <%= f.submit "コメント", class: "btn btn-default", style: "margin-left: 770px; margin-top: 15px; background-color:#0092ff; opacity:0.7;" %>
-                    <% end %>
-                 </div>
                 
                  <% if @cleaner.reviews.count != 0 %>
                         <% @cleaner.reviews.each do |review| %>

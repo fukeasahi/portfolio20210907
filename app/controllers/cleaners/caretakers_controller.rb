@@ -6,19 +6,22 @@ class Cleaners::CaretakersController < ApplicationController
     end
     
     def show
-        @caretaker = Caretaker.find(params[:id])
+        @order = Order.find(params[:id])
     end
     
     def update
         @order = Order.find(params[:id])
-        if params[:status] == 0
-            v = "承認待ち"
-        elsif params[:status] == 1
-            v = "承認"
-        elsif params[:status] == 2
-            v = "承認不可"
+        if params[:order][:status] == "0"
+            valu = "承認待ち"
+        elsif params[:order][:status] == "1"
+            valu = "承認"
+        elsif params[:order][:status] == "2"
+            valu = "承認不可"
+        elsif params[:order][:status] == "3"
+            valu = "清掃完了"
         end
-        @order.update(status: v)
+        
+        @order.update(status: valu)
         print(@order)
         redirect_to cleaners_caretakers_path
     end

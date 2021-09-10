@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   # get '/caretakers/cleaners' => 'caretakers/cleaners#index'
   # get '/caretakers/cleaners' => 'caretakers/cleaners#show'
   # get '/caretakers/search' => 'caretakers/cleaners#search'
-  get '/caretakers/chat' => 'caretakers/orders#chat'
+  get '/caretakers/chat/:id' => 'caretakers/orders#chat', as: "chat"
+  get '/caretakers/reviews/:id' => 'caretakers/orders#review', as: "review"
   get '/caretakers/search' => 'caretakers/cleaners#search'
   get '/caretakers/cleaners/orders' => 'caretakers/orders#index'
   namespace :caretakers do
