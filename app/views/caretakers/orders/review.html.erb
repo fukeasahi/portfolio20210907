@@ -1,0 +1,18 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 style="text-align: center;">清掃のレビューをお願いします</h3>
+        </div>
+        <div class="col-lg-12">
+             <div style="width: 864px; margin: 15px auto 15px;">
+                 
+                    <%= form_with model:[@review], url: caretakers_cleaner_reviews_path(@order.cleaner),local: true do |f| %>
+                        <%= f.text_area :comment, class:"form-control" %>
+                        <%= f.submit "コメント", class: "btn btn-default", style: "margin-left: 770px; margin-top: 15px; background-color:#0092ff; opacity:0.7;" %>
+                    <% end %>
+                 </div>
+        </div>
+    </dvi>
+    
+</div>

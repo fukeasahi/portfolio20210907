@@ -1,11 +1,26 @@
-<%= link_to "戻る", caretakers_cleaners_orders_path, class: "btn btn-default" %>
+<div class="row">
+  <div class="col-lg-5">
+</div>
+  <div class="col-lg-1">
+<%= link_to "戻る", caretakers_cleaners_orders_path, class: "btn btn-default", style: "margin-top: 15px; background-color:#0092ff; opacity:0.7;" %>
+</div>
+<div class="col-lg-1">
+<% if @order.status == "承認" %>
+    <%= form_with model:[@order], url: caretakers_cleaner_order_path(@order),local: true do |f| %>
+        <%= f.hidden_field :status, :value => 3 %>
+        <%= f.submit "清掃完了", class: "btn btn-default", style: "margin-top: 15px; background-color:#0092ff; opacity:0.7;" %>
+    <% end %>
+<% end %>
+</div>
+</div>
+
 <div style="padding-bottom: 50px;">
     <div class="line-bc"><!--①LINE会話全体を囲う-->
 
   <!--②左コメント始-->
   <div class="balloon6">
     <div class="faceicon">
-    <img src="./images/rogo.png">
+    <%= image_tag "rogo.png"%>
     </div>
     <div class="chatting">
       <div class="says">
@@ -20,7 +35,7 @@
   <!--②左コメント始-->
   <div class="balloon6">
     <div class="faceicon">
-    <img src="./images/rogo.png">
+     <%= image_tag "rogo.png"%>
     </div>
     <div class="chatting">
       <div class="says">
@@ -36,7 +51,7 @@
   <!--②左コメント始-->
   <div class="balloon6">
     <div class="faceicon">
-    <img src="./images/rogo.png">
+     <%= image_tag "rogo.png"%>
     </div>
     <div class="chatting">
       <div class="says">
@@ -60,7 +75,7 @@
   <!--②左コメント始-->
   <div class="balloon6">
     <div class="faceicon">
-    <img src="./images/rogo.png">
+     <%= image_tag "rogo.png"%>
     </div>
     <div class="chatting">
       <div class="says">
@@ -98,7 +113,7 @@
     <!--②左コメント始-->
   <div class="balloon6">
     <div class="faceicon">
-    <img src="./images/rogo.png">
+     <%= image_tag "rogo.png"%>
     </div>
     <div class="chatting">
       <div class="says">

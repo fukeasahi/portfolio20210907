@@ -7,7 +7,7 @@
         </div>
         <% @yet_orders.each do |yet_order| %>
             <div class="col-lg-4" style="margin-bottom: 50px;">
-              <%= link_to caretakers_chat_path, style:"color: black;" do%>
+              <%= link_to chat_path(yet_order), style:"color: black;" do%>
                 <div class="row">
                   <div class="col-lg-6">
                     <%= image_tag "woman3.png", style: "height:120px;"%>
@@ -33,7 +33,7 @@
         <!--<div class="col-lg-12">-->
         <% @ok_orders.each do |ok_order| %>
             <div class="col-lg-4" style="margin-bottom: 50px;">
-              <%= link_to caretakers_chat_path, style:"color: black;" do%>
+              <%= link_to chat_path(ok_order), style:"color: black;" do%>
                 <div class="row">
                   <div class="col-lg-6">
                     <%= image_tag "woman3.png", style: "height:120px;"%>

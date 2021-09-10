@@ -15,11 +15,11 @@
               <%= link_to caretakers_cleaner_path(cleaner), style:"color: black;" do%>
                 <div class="row">
                   <div class="col-lg-6">
-                    <%= image_tag "woman3.png", style: "height:120px;"%>
+                    <%= image_tag "woman#{cleaner.id}.png", style: "height:120px; width:180px;"%>
                   </div>
                   <div class="col-6">
                     <div><%= cleaner.name %></div>
-                    <div>⭐️⭐️⭐️⭐⭐</div>
+                    <div>⭐⭐️⭐️⭐️⭐️️</div>
                     <div><%= cleaner.age %>歳<%= cleaner.gender %></div>
                     <div><%= cleaner.city %>在住</div>
                     <div><%= cleaner.pr %></div>
