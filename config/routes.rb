@@ -12,11 +12,16 @@ Rails.application.routes.draw do
   # get '/caretakers/cleaners' => 'caretakers/cleaners#index'
   # get '/caretakers/cleaners' => 'caretakers/cleaners#show'
   # get '/caretakers/search' => 'caretakers/cleaners#search'
-  namespace :caretakers do
-    resources :cleaners
-  end
+  get '/caretakers/chat' => 'caretakers/orders#chat'
   get '/caretakers/search' => 'caretakers/cleaners#search'
-  
+  get '/caretakers/cleaners/orders' => 'caretakers/orders#index'
+  namespace :caretakers do
+    resources :cleaners do
+      resources :orders, except: [:index]
+      resources :reviews, only: [:create, :destroy] 
+    end
+  end
+
   namespace :cleaners do
     resources :caretakers
   end

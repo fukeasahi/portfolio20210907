@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_064811) do
+ActiveRecord::Schema.define(version: 2021_09_10_002720) do
 
   create_table "caretakers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -53,6 +53,27 @@ ActiveRecord::Schema.define(version: 2021_09_09_064811) do
     t.string "branch_name"
     t.integer "branch_code"
     t.integer "account_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "cleaner_id"
+    t.integer "caretaker_id"
+    t.integer "property_id"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.integer "price"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "caretaker_id"
+    t.integer "cleaner_id"
+    t.string "comment"
+    t.float "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

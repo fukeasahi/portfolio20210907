@@ -2,18 +2,22 @@
     <div class="row">
         <div class="col-lg-12" style="margin-bottom: 15px;">
             <h3>
-                依頼されています
+                承認待ち
             </h3>
         </div>
         <% @yet_orders.each do |yet_order| %>
             <div class="col-lg-4" style="margin-bottom: 50px;">
-              <%= link_to cleaners_caretaker_path(yet_order), style:"color: black;" do%>
+              <%= link_to caretakers_chat_path, style:"color: black;" do%>
                 <div class="row">
                   <div class="col-lg-6">
                     <%= image_tag "woman3.png", style: "height:120px;"%>
                   </div>
                   <div class="col-6">
-                    <div><%= yet_order.caretaker.name %></div>
+                    <div><%= yet_order.cleaner.name %></div>
+                    <div>⭐️⭐️⭐️⭐⭐</div>
+                    <div><%= yet_order.cleaner.age %>歳<%= yet_order.cleaner.gender %></div>
+                    <div><%= yet_order.cleaner.city %>在住</div>
+                    <div><%= yet_order.cleaner.pr %></div>
                   </div>
                 </div>
               <% end %>
@@ -23,19 +27,23 @@
     <div class="row">
         <div class="col-lg-12" style="margin-bottom: 15px;">
             <h3>
-                承認済
+                承認済み
             </h3>
         </div>
         <!--<div class="col-lg-12">-->
         <% @ok_orders.each do |ok_order| %>
             <div class="col-lg-4" style="margin-bottom: 50px;">
-              <%= link_to cleaners_caretaker_path(ok_order.caretaker), style:"color: black;" do%>
+              <%= link_to caretakers_chat_path, style:"color: black;" do%>
                 <div class="row">
                   <div class="col-lg-6">
                     <%= image_tag "woman3.png", style: "height:120px;"%>
                   </div>
                   <div class="col-6">
-                    <div><%= ok_order.caretaker.name %></div>
+                    <div><%= ok_order.cleaner.name %></div>
+                    <div>⭐️⭐️⭐️⭐⭐</div>
+                    <div><%= ok_order.cleaner.age %>歳<%= ok_order.cleaner.gender %></div>
+                    <div><%= ok_order.cleaner.city %>在住</div>
+                    <div><%= ok_order.cleaner.pr %></div>
                   </div>
                 </div>
               <% end %>
@@ -44,3 +52,7 @@
         <!--</div>-->
     </div>
 </div>
+
+
+
+

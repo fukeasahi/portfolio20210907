@@ -32,20 +32,22 @@
       
         <% if @posts %>
           <% @posts.each do |post| %>
-            <div class="col-lg-4" style="margin-bottom: 50px;">
-              <div class="row">
-                <div class="col-lg-6">
-                  <%= image_tag "woman3.png", style: "height:120px;"%>
-                </div>
-                <div class="col-6">
-                  <div><%= post.name %></div>
-                  <div>⭐️⭐️⭐️⭐⭐</div>
-                  <div><%= post.age %>歳<%= post.gender %></div>
-                  <div><%= post.city %>在住</div>
-                  <div><%= post.pr %></div>
-                </div>
+              <div class="col-lg-4" style="margin-bottom: 50px;">
+                <%= link_to caretakers_cleaner_path(post), style:"color: black;" do%>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <%= image_tag "woman3.png", style: "height:120px;"%>
+                    </div>
+                    <div class="col-6">
+                      <div><%= post.name %></div>
+                      <div>⭐️⭐️⭐️⭐⭐</div>
+                      <div><%= post.age %>歳<%= post.gender %></div>
+                      <div><%= post.city %>在住</div>
+                      <div><%= post.pr %></div>
+                    </div>
+                  </div>
+                <% end %>
               </div>
-            </div>
           <% end %>
         <% end %>
     </div>
