@@ -1,0 +1,6 @@
+ja:
+  enums:
+    property:
+      status:
+        MoveOut: 退去済み
+        MoveIn: 入居中

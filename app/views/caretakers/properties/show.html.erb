@@ -1,0 +1,13 @@
+<div class="property">
+  <p>
+    <strong>住所</strong>
+    <%= @property.prefecture %>
+    <%= @property.city%>
+    <%= @property.address_number %>
+    <%= @property.building %>
+    <%= @property.status_i18n %>
+  </p>
+</div>
+
+<%= link_to '編集する', edit_property_path(@property.id) %>
+<%= link_to '一覧に戻る', caretakers_properties_path %>

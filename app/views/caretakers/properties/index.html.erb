@@ -1,0 +1,28 @@
+<h1>公開物件一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>サムネイル</th>
+      <th>概要</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= image_tag property.image_id.url %></td>
+        <td><%= property.post_code %></td>
+        <td><%= link_to '詳細へ', property_path(property.id) %></td>
+        <td><%= link_to '編集する', edit_property_path(property.id) %></td>
+        <td><%= link_to '削除する', property_path(property.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規投稿', caretakers_properties_new_path %>
