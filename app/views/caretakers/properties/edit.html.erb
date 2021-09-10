@@ -1,0 +1,24 @@
+<h1>物件情報変更フォーム</h1>
+<%= form_for @property, url: create_property_path do |f| %>
+  <div class="field">
+    <%= f.label :物件間取り画像 %>
+    <%= f.file_field :image_id %><br>
+    <%= f.label :汚れ画像 %>
+    <%= f.file_field :dirt_image_id %><br>
+    <%= f.label :郵便番号 %>
+    <%= f.text_field :post_code, :size => 50 %><br>
+    <%= f.label :広さ %>
+    <%= f.text_field :size, :size => 50 %><br>
+    <%= f.label :都道府県 %>
+    <%= f.text_field :prefecture, :size => 50 %><br>
+    <%= f.label :市区町村 %>
+    <%= f.text_field :city, :size => 50 %><br>
+    <%= f.label :番地 %>
+    <%= f.text_field :address_number, :size => 50 %><br>
+    <%= f.label :建物名（戸建ては省略可） %>
+    <%= f.text_field :building, :size => 50 %><br>
+    <%= f.label :居住状態 %>
+    <%= f.select :status, Property.statuses_i18n.invert, {prompt: "-----"}, {class: "select__box__format"} %>
+  </div>
+  <%= f.submit "更新" %>
+<% end %>

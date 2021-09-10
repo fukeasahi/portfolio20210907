@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_000353) do
   create_table "properties", force: :cascade do |t|
     t.string "post_code", null: false
     t.string "image_id"
+    t.string "dirt_image_id", null: false
     t.float "size"
     t.integer "status"
     t.string "prefecture", null: false

@@ -6,7 +6,10 @@
     <%= @property.address_number %>
     <%= @property.building %>
     <%= @property.status_i18n %>
-  </p>
+  </p><br>
+    <%= image_tag @property.image_id.url %>
+    <%= image_tag @property.dirt_image_id.url %>
+    <p>汚れの状態：○○，××</p>
 </div>
 
 <%= link_to '編集する', edit_property_path(@property.id) %>

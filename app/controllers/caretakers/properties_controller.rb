@@ -48,7 +48,9 @@ class Caretakers::PropertiesController < ApplicationController
                                              :prefecture,
                                              :city,
                                              :address_number,
-                                             :building)
+                                             :building,
+                                             :dirt_image_id
+                                            )
         end
 
 end
